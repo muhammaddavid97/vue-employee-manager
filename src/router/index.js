@@ -1,10 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from '@/views/Home.vue';
-import Soal1 from '@/views/Soal1.vue';
-import Soal2 from '@/views/Soal2.vue';
-import Soal3 from '@/views/Soal3.vue';
-
+import Create from '@/components/create_data.vue';
+import List from '@/components/list_data.vue';
+import Edit from '@/components/edit_data.vue';
 
 Vue.use(VueRouter);
 const routes = [
@@ -14,19 +13,23 @@ const routes = [
     component:Home
   },
   {
-    path:'/soal1',
-    name:'Soal1',
-    component:Soal1
+    path:'/create',
+    name:'create',
+    component:Create
   },
   {
-    path:'/soal2',
-    name:'Soal2',
-    component:Soal2
+    path:'/list',
+    name:'list',
+    component:List
   },
   {
-    path:'/soal3',
-    name:'Soal3',
-    component:Soal3
+    path:'/edit/:id',
+    name:'edit',
+    component:Edit
+  },
+  {
+    path:'*',
+    redirect:'/'
   }
 ]
 
