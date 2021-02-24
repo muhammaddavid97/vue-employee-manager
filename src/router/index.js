@@ -1,31 +1,31 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from '@/views/Home.vue';
-import Create from '@/components/create_data.vue';
-import List from '@/components/list_data.vue';
-import Edit from '@/components/edit_data.vue';
+import Dashboard from "@/components/dashboard.vue";
+import Edit from "@/components/edit_employee.vue";
+import New from "@/components/new_employee.vue";
+import View from "@/components/view_employee.vue";
 
 Vue.use(VueRouter);
 const routes = [
   {
     path:'/',
-    name:'Home',
-    component:Home
+    name:'Dashboard',
+    component:Dashboard
   },
   {
     path:'/create',
-    name:'create',
-    component:Create
+    name:'New',
+    component:New
   },
   {
-    path:'/list',
-    name:'list',
-    component:List
-  },
-  {
-    path:'/edit/:id',
-    name:'edit',
+    path:'/edit/:employee_id',
+    name:'Edit',
     component:Edit
+  },
+  {
+    path:'/:employee_id',
+    name:'View',
+    component:View
   },
   {
     path:'*',
